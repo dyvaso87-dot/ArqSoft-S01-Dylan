@@ -1,0 +1,200 @@
+/* =============================================
+   CATALOGO - GOLDEN NEON "LIVING" THEME
+   Efectos de partículas y bordes dinámicos
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Exo+2:wght@300;400;600&display=swap');
+
+:root {
+    --bg-darkest: #020202;
+    --bg-card: #0a0a08;
+    --gold-bright: #ffea00;
+    --gold-neon: #ffd700;
+    --gold-deep: #bf953f;
+    --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 100%);
+    --text-main: #ffffff;
+    --text-gold: #d4af37;
+    /* Sombras de luz neón */
+    --gold-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    --gold-shadow-intense: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+body {
+    background-color: var(--bg-darkest);
+    color: var(--text-main);
+    font-family: 'Exo 2', sans-serif;
+    overflow-x: hidden;
+    /* Fondo con efecto de profundidad */
+    background-image: radial-gradient(circle at 50% -20%, rgba(191, 149, 63, 0.15) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(255, 234, 0, 0.05) 0%, transparent 30%);
+}
+
+    /* ── EFECTO DE PARTÍCULAS (POLVO DE ORO) ── */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://www.transparenttextures.com/patterns/stardust.png');
+        opacity: 0.2;
+        pointer-events: none;
+        animation: floatingParticles 60s linear infinite;
+        z-index: 0;
+    }
+
+@keyframes floatingParticles {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 500px 1000px;
+    }
+}
+
+/* ── NAVBAR CON BRILLO RADIAL ── */
+.navbar {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border-bottom: 2px solid var(--gold-deep);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+}
+
+.navbar-brand {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    filter: drop-shadow(0 0 5px rgba(255,215,0,0.5));
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--gold-bright) !important;
+    text-shadow: 0 0 15px var(--gold-neon);
+    letter-spacing: 2px;
+}
+
+/* ── TARJETAS "VIVAS" ── */
+.game-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(191, 149, 63, 0.2);
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+    /* Borde animado al hacer hover */
+    .game-card::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        background: var(--gold-gradient);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s;
+        border-radius: 8px;
+    }
+
+    .game-card:hover {
+        transform: scale(1.03) translateY(-10px);
+        box-shadow: var(--gold-shadow-intense);
+    }
+
+        .game-card:hover::after {
+            opacity: 1;
+        }
+
+        /* El título reluce con movimiento */
+        .game-card:hover .game-card-title {
+            color: var(--gold-bright);
+            text-shadow: 0 0 10px var(--gold-neon);
+            animation: shineText 2s infinite linear;
+        }
+
+@keyframes shineText {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.5) drop-shadow(0 0 8px var(--gold-bright));
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+/* ── BOTONES CON EFECTO DE BARRIDO ── */
+.btn-add-gaming {
+    background: var(--gold-gradient);
+    border: none;
+    color: #000 !important;
+    position: relative;
+    overflow: hidden;
+    font-weight: 700;
+    box-shadow: var(--gold-shadow);
+}
+
+    .btn-add-gaming::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+        transition: 0.5s;
+    }
+
+    .btn-add-gaming:hover::before {
+        left: 150%;
+    }
+
+    .btn-add-gaming:hover {
+        box-shadow: var(--gold-shadow-intense);
+        transform: translateY(-2px);
+    }
+
+/* ── BADGES NEÓN ── */
+.badge-consola {
+    background: transparent;
+    border: 1px solid var(--gold-bright);
+    color: var(--gold-bright);
+    text-shadow: 0 0 5px var(--gold-neon);
+    box-shadow: inset 0 0 5px var(--gold-neon);
+}
+
+/* ── FORMULARIOS ACTIVOS ── */
+.form-control-gaming {
+    background: rgba(20, 20, 15, 0.8);
+    border: 1px solid var(--gold-deep);
+}
+
+    .form-control-gaming:focus {
+        border-color: var(--gold-bright);
+        background: rgba(30, 30, 20, 1);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-gradient);
+    border-radius: 10px;
+}
+
+/* ── TÍTULOS DE PÁGINA ── */
+.page-header h1 {
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
+    filter: drop-shadow(0 0 10px rgba(191, 149, 63, 0.4));
+}
