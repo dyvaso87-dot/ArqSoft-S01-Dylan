@@ -18,6 +18,11 @@ Este proyecto es una aplicación web interactiva desarrollada en **ASP.NET Core 
 - **Tipografía:** Orbitron (Google Fonts)
 - **Herramientas:** Visual Studio 2022, Git
 
+## Como se ve 
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/284e0f7a-ae5c-4c55-86b4-245156c281de" />
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/ee25b0f6-4d13-40c5-b75b-10ca60fc200b" />
+
+
 ## Clausula de IA
 
 Yo, Dylan Vazquez Sorianno, declaro que SI he utilizado herramientas de Inteligencia Artificial para la elaboración de este trabajo académico. Afirmo que el unic uso de la IA fue para motivos de personalizacion de mi oagina creada.
