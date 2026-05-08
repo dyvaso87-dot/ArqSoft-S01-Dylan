@@ -1,33 +1,51 @@
-﻿@model List<Catalogo.Models.Item>
-
-<h1>Mi Catálogo</h1>
-
-<!-- Filtro por género -->
-<div>
-    <a asp-action="Index">Todos</a>
-
-    @foreach (var gen in ViewBag.Generos as List<string>)
-    {
-        <span> | </span>
-        <a asp-action="Index" asp-route-genero="@gen">@gen</a>
-    }
+﻿
+<div class="container mt-5">
+    <h2 class="section-title">Nuestra Colección</h2>
+    <div class="catalogo-container">
+        @foreach (var juego in Model)
+        {
+            <div class="game-card">
+                <img src="@juego.Img" alt="@juego.Titulo" class="game-img">
+                
+                <div class="game-info">
+                    <h3 class="game-title">@juego.Titulo</h3>
+                    <span class="badge-genre">@juego.Genero</span>
+                    
+                    <p class="game-description">@juego.Desc</p>
+                    
+                    <a asp-action="Detalle" asp-route-id="@juego.Id" class="btn-action">
+                        VER DETALLES
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
 </div>
 
-<hr />
-
-<!-- Lista de items -->
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>
-            <a asp-action="Detalle" asp-route-id="@item.Id">
-                @item.Titulo
-            </a>
-            -- @item.Genero (@item.Ano)
-        </li>
+<style>
+    /* Estilos específicos para que la descripción sea legible */
+    .game-description {
+        color: #e0e0e0; /* Gris muy claro/blanco */
+        font-size: 0.9rem;
+        margin: 15px 0;
+        line-height: 1.4;
+        /* Esto asegura que el texto no tenga efectos de desenfoque */
+        filter: none !important; 
     }
-</ul>
 
-<hr />
+    .badge-genre {
+        background: var(--accent-color);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
 
-<a asp-action="Agregar">+ Agregar Videojuego</a>
+    .game-img {
+        width: 100%;
+        height: 250px; /* Ajusta esto según prefieras */
+        object-fit: cover;
+        display: block;
+    }
+</style>

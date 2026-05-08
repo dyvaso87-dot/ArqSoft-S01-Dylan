@@ -1,8 +1,45 @@
-﻿@model Catalogo.Models.Item
-<h1>@Model.Titulo</h1>
-<p><strong>Género:</strong> @Model.Genero</p>
-<p><strong>Consola:</strong> @Model.Consola</p>
-<p><strong>Año:</strong> @Model.Ano</p>
-<p><strong>Descripción:</strong> @Model.Descripcion</p>
-<hr />
-<a asp-action="Index">&larr; Volver al Catálogo</a>
+﻿@{
+    ViewData["Title"] = "Detalle del Juego";
+}
+
+<div class="detail-container">
+    <div class="detail-content">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aajm8sYvSAnkP98S76296sS6.jpg" class="img-fluid rounded-4 shadow-neon">
+
+            </div>
+            <div class="col-md-7">
+                <h1 class="display-3 text-uppercase font-weight-bold">Elden Ring</h1>
+                <h4 class="text-info">FromSoftware | Action RPG</h4>
+                <hr class="neon-line">
+                <p class="lead">
+                    Levántate, Sinluz, y déjate guiar por la gracia para esgrimir el poder del Círculo de Elden y convertirte en el Señor de Elden en las Tierras Intermedias.
+                </p>
+                <div class="stats-box d-flex gap-4 mt-4">
+                    <div><strong>Calificación:</strong> ⭐ 10/10</div>
+                    <div><strong>Plataformas:</strong> PC, PS5, Xbox</div>
+                </div>
+                <button class="btn-action mt-5" style="width: auto; padding: 15px 50px;">AÑADIR A FAVORITOS</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .detail-container {
+        padding: 60px 0;
+        color: white;
+    }
+
+    .shadow-neon {
+        box-shadow: 0 0 30px rgba(130, 87, 229, 0.5);
+    }
+
+    .stats-box {
+        background: rgba(255,255,255,0.1);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid var(--neon-cyan);
+    }
+</style>

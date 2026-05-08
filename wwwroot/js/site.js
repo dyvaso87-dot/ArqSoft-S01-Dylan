@@ -112,6 +112,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 title.style.color = '';
                 title.style.textShadow = '';
             }
+
         });
     });
+    .privacy - container {
+        max - width: 800px;
+        margin: 50px auto;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--accent - color);
+        border - radius: 15px;
+        box - shadow: 0 0 20px rgba(130, 87, 229, 0.2);
+    }
+
+.privacy - section {
+        margin - bottom: 30px;
+        padding: 15px;
+        border - left: 3px solid var(--neon - cyan);
+        background: rgba(0, 247, 255, 0.02);
+    }
+
+.text - accent {
+        color: var(--accent - color);
+        text - transform: uppercase;
+        font - weight: bold;
+    }
+
+.text - neon - cyan {
+        color: var(--neon - cyan);
+        font - family: 'Orbitron', sans - serif;
+        letter - spacing: 2px;
+    }
+
+/* Efecto de parpadeo para el "Encriptado" */
+.blink {
+        animation: blinker 1.5s linear infinite;
+    }
+
+    @keyframes blinker {
+        50 % { opacity: 0; }
+    }
+
+.glitch - title - small {
+        font - family: 'Orbitron', sans - serif;
+        color: #fff;
+        text - shadow: 2px 2px var(--accent - color);
+    }
 });

@@ -1,8 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Pagian principal";
-}
+﻿<style>
+    .hero-section {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(13,13,18,0.2) 0%, rgba(13,13,18,0.9) 100%), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071');
+        background-size: cover;
+        background-position: center;
+        height: 85vh;
+        border-radius: 0 0 50px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido a esta increible pagina</h1>
-    <p><a href="https://learn.microsoft.com/aspnet/core">Una pagina donde encontraras tus juegos increibles</a>.</p>
+    .glitch-title {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 5rem;
+        font-weight: 900;
+        background: linear-gradient(to right, #fff, #00f7ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 15px rgba(0, 247, 255, 0.5));
+    }
+</style>
+
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="glitch-title">BIENVENIDO AL NEXO</h1>
+        <p style="color: #ccc; font-size: 1.2rem;">Descubre los títulos más épicos del mundo gaming.</p>
+        <a asp-controller="Catalogo" asp-action="Index" class="btn-action" style="width: auto; padding: 10px 30px; text-decoration: none;">EXPLORAR CATÁLOGO</a>
+    </div>
 </div>

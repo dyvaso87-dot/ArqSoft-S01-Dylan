@@ -1,6 +1,147 @@
 ﻿@{
-    ViewData["Title"] = "Politica de privacidad";
+    ViewData["Title"] = "Protocolos de Privacidad";
+    Layout = "_Layout";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Aqui se muestran las politicas de privacidad de esta increible pagina.</p>
+<style>
+    /* 1. Ajustes globales para asegurar el centrado total */
+    html, body {
+        height: 100%;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    /* Eliminamos espacios extra que pone el sistema por defecto */
+    main.pb-3 {
+        padding-bottom: 0 !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* 2. El Contenedor de Fondo (Battle Station) */
+    .privacy-page-bg {
+        display: flex !important;
+        align-items: center !important; /* Centrado Vertical */
+        justify-content: center !important; /* Centrado Horizontal */
+        width: 100%;
+        /* Calculamos la altura restando el menú para que el centro sea real */
+        min-height: calc(100vh - 60px);
+        position: relative;
+        background-image: linear-gradient(rgba(13, 13, 18, 0.8), rgba(13, 13, 18, 0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2040');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 20px;
+    }
+
+    /* 3. El Cuadro de Protocolos Mejorado */
+    .privacy-content-wrapper {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-width: 800px;
+        padding: 40px;
+        background: rgba(10, 10, 15, 0.95); /* Fondo oscuro sólido para lectura */
+        border: 2px solid #00f7ff; /* Borde Neón Cian */
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 247, 255, 0.2);
+        backdrop-filter: blur(15px);
+        /* Pequeño ajuste para compensar visualmente el menú superior */
+        transform: translateY(-10px);
+    }
+
+    /* 4. Estilos de Texto */
+    .glitch-title-cyber {
+        font-family: 'Orbitron', sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 0 0 10px #00f7ff;
+        font-size: 2.5rem;
+    }
+
+    .estado-alerta {
+        color: #f1c40f; /* Dorado */
+        font-family: 'Orbitron', sans-serif;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+    }
+
+    .text-accent-glitch {
+        color: #00f7ff;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.2rem;
+        margin-top: 25px;
+    }
+
+    .privacy-text {
+        color: #e0e0e0;
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    .btn-nexo {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 40px;
+        color: #00f7ff;
+        text-decoration: none;
+        border: 1px solid #00f7ff;
+        border-radius: 5px;
+        transition: 0.3s;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.9rem;
+    }
+
+        .btn-nexo:hover {
+            background: rgba(0, 247, 255, 0.1);
+            box-shadow: 0 0 15px #00f7ff;
+            color: #fff;
+        }
+</style>
+
+<div class="privacy-page-bg">
+    <div class="privacy-content-wrapper">
+        <div class="text-center mb-4">
+            <h1 class="glitch-title-cyber">PROTOCOLOS DE SEGURIDAD</h1>
+            <p class="estado-alerta">SISTEMA: OPERATIVO // ACCESO: CONCEDIDO</p>
+            <hr style="border-color: #00f7ff; opacity: 0.3;">
+        </div>
+
+        <div class="privacy-body">
+            <section>
+                <h2 class="text-accent-glitch">>> 01. Recolección de Datos</h2>
+                <p class="privacy-text">
+                    Solo recolectamos los datos necesarios para que tu experiencia en el Nexo sea óptima.
+                    Tus registros de batalla están cifrados bajo estándares militares.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-accent-glitch">>> 02. Uso de la Información</h2>
+                <p class="privacy-text">
+                    No compartimos tu perfil con facciones externas. Tus datos se utilizan exclusivamente
+                    para mantener la estabilidad de la red del catálogo.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-accent-glitch">>> 03. Cookies de Enlace</h2>
+                <p class="privacy-text">
+                    Utilizamos cookies de sesión para mantener tu enlace estable mientras exploras los
+                    títulos disponibles.
+                </p>
+            </section>
+        </div>
+
+        <div class="text-center">
+            <a asp-controller="Home" asp-action="Index" class="btn-nexo">
+                RETORNAR AL NEXO
+            </a>
+        </div>
+    </div>
+</div>
